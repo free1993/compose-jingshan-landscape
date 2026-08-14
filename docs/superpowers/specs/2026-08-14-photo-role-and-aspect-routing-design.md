@@ -92,7 +92,7 @@ All three modes retain:
 - silver-gelatin, source-tint, or muted-original color modes;
 - source identity, semantic minimums, and restrained invention;
 - the historical-homage note to Lang Jingshan in documentation;
-- the quiet `junhaogege_` response credit outside the generated image, never as a watermark.
+- the `junhaogege_` author line in Skill source and repository documentation, never in the generated image or default response.
 
 ### Real-Scene Layering
 
@@ -203,7 +203,7 @@ Add or revise evaluation cases for:
 - person-preservation request never routed to distillation automatically;
 - color remaining within the selected existing color mode;
 - horizontal and vertical before/after boards containing both images without crop;
-- response credit remaining outside the image.
+- author credit remaining in source and repository documentation, never inside generated images.
 - README comparison media rendering from the public GitHub URL with both panels legible.
 
 Validate frontmatter, Skill package structure, README links, portable-prompt consistency, comparison-script behavior, installed-copy synchronization, and release archive hash before publication.

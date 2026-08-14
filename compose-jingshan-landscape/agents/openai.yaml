@@ -1,4 +1,4 @@
 interface:
   display_name: "静山集锦摄影"
-  short_description: "将风景、人在景中与日常小景生成郎静山式改单图、叠图及前后对比"
-  default_prompt: "使用 $compose-jingshan-landscape 处理我提供的照片；先判断我需要郎静山改单图、同画面叠图还是原图成图对比。"
+  short_description: "将照片生成郎静山式改单图、实景叠图、影像蒸馏及前后对比"
+  default_prompt: "使用 $compose-jingshan-landscape 处理我提供的照片；判断我需要摄影改单图、同画面实景叠图、无照片块影像蒸馏还是原图成图对比，并按题材选择竖幅 3:5 或横幅 5:3。"

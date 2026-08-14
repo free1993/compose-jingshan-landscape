@@ -17,7 +17,7 @@ The release should support:
 - Do not claim automatic listing in the Codex or ChatGPT Plugin Directory. Directory publication is separate from a public GitHub repository.
 - Do not claim one-click Skill installation in the consumer Doubao app without an official supported import path.
 - Do not alter the existing Lang Jingshan-inspired modes, routing, composition rules, author line, or comparison script behavior.
-- Do not publish source photographs, generated test images, private paths, credentials, or generation history.
+- Do not publish private source photographs, private test images, private paths, credentials, or generation history. Project-owned synthetic demonstration media may be published when labeled transparently.
 
 ## Repository Changes
 
@@ -92,7 +92,7 @@ Before release:
 - parse the ZIP and confirm one top-level folder plus the required `SKILL.md`;
 - validate frontmatter name and description constraints;
 - verify all README links and installation paths;
-- scan tracked files and release contents for images, temporary paths, credentials, and private data;
+- scan tracked files and release contents for unexpected images, temporary paths, credentials, and private data; allow only documented project-owned demonstration media in the repository and exclude it from the release ZIP;
 - confirm the GitHub repository is public and searchable by the exact Skill name;
 - download the published release asset and compare its SHA-256 hash to the local artifact;
 - confirm local `main` and `origin/main` are synchronized.
@@ -104,4 +104,3 @@ Before release:
 - An AgentKit user can import the release ZIP without restructuring it.
 - A user of a non-Skill host can use `PORTABLE_PROMPT.md` without Codex-specific instructions.
 - No documentation claims automatic Codex directory listing or native consumer Doubao Skill installation.
-

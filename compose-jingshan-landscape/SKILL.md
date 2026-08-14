@@ -1,6 +1,6 @@
 ---
 name: compose-jingshan-landscape
-description: "Transform user-supplied landscapes, figures in landscape, and poetic mobile-photo small scenes into Lang Jingshan-inspired Chinese pictorialist photography. Produce a standalone vertical 3:5 Jingshan reconstruction, a prompt-driven layered artwork that visibly combines a truthful source-photo anchor with the interpreted plate, and an exact deterministic before/after board. Use for 郎静山、集锦摄影、画意摄影、中国山水摄影、云山留白、人在景中、日常小景、叠图、照片核、纸本叠层、原图成图对比, or before/after requests; support one primary photo plus up to three optional supporting photos."
+description: "Transform user-supplied landscapes, figures in landscape, and poetic mobile-photo small scenes into Lang Jingshan-inspired Chinese pictorialist photography. Produce a source-faithful standalone reconstruction, a real-scene layered artwork with a recognizable photographic anchor, a no-photo semantic distillation, or an exact deterministic before/after board. Route portrait subjects to 3:5 and expansive landscapes to 5:3 unless the user specifies another ratio. Use for 郎静山、集锦摄影、画意摄影、中国山水摄影、云山留白、人在景中、日常小景、实景拼贴、叠图、照片核、影像蒸馏、完全重构、原图成图对比, or before/after requests; support one primary photo plus up to three optional supporting photos."
 ---
 
 # 静山集锦摄影
@@ -12,13 +12,13 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 ## 核心边界
 
 - 处理风景、人在景中的环境照片，以及具有自然形态、方向关系和低信息空间的日常小景。
-- 默认竖幅 3:5；仅在用户要求或题材强烈依赖横向游观时改用横幅。
+- 默认按题材路由画幅：竖向主体用 3:5，横向游观题材用 5:3；用户明确比例优先。
 - 接受一张主照片与零至三张辅助照片；单图必须可独立完成。
 - 保留主场景、人物身份和语义最小集，允许裁切、挪移、缩放、组合、遮蔽、虚化和删除次要元素。
 - 用三远、游观视点、银盐层次和无画处重构照片，不用水墨滤镜证明“中国风”。
 - 不处理近景大头照、美颜、时尚、商业产品或棚拍人像。
 
-作者行只属于本 Skill 源文件。不得把 `junhaogege_` 加入图片、水印、默认响应、网站或推广内容。
+作者行只属于本 Skill 源文件与仓库说明。不得把 `junhaogege_` 加入生成图片、水印、默认响应或额外推广内容。
 
 ## 三条决策轴
 
@@ -34,6 +34,7 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 
 - `jingshan-single`：默认，输出一张完整郎静山式摄影成图。
 - `jingshan-layered`：输出一张原图照片核与郎静山转译场同画面叠合的作品。
+- `jingshan-distilled`：原图只作语义与构图证据，输出不保留照片碎片或摄影窗口的完整重构作品。
 
 ### 呈现模式
 
@@ -45,11 +46,24 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 | 用户表达 | 处理 | 呈现 |
 | --- | --- | --- |
 | 郎静山处理、改单图、集锦摄影 | `jingshan-single` | `artwork-only` |
-| 叠图、照片核、纸本叠层、同画面叠合 | `jingshan-layered` | `artwork-only` |
+| 实景拼贴、叠图、照片核、纸本叠层、同画面叠合 | `jingshan-layered` | `artwork-only` |
+| 影像蒸馏、仅作灵感、完全重构、不保留原照片块 | `jingshan-distilled` | `artwork-only` |
 | 前后对比、原图成图、before/after | 用户指定；否则 `jingshan-single` | `before-after` |
 | 叠图对比、叠合后再对比 | `jingshan-layered` | `before-after` |
+| 蒸馏对比、重构后再对比 | `jingshan-distilled` | `before-after` |
 
-仍有歧义时选择破坏最小的 `jingshan-single + artwork-only`。只有交付数量或对比布局无法合理推断时才询问。
+仍有歧义时选择破坏最小的 `jingshan-single + artwork-only`。人物本人、精确物件、纪实事件或地点必须保持时，不得自动进入蒸馏。只有交付数量或对比布局无法合理推断时才询问。
+
+### 画幅路由
+
+按以下顺序决定：
+
+1. 用户明确比例或方向时严格遵循。
+2. 人像方向、人物、枝瓶、向上建筑与方向不明的方图默认 3:5。
+3. 横向山水、江湖、山脊、道路、多人行进或依赖横向游观的题材默认 5:3。
+4. 用户要求保持构图，或改幅会破坏语义最小集时使用原图比例。
+
+允许用户指定 3:5、5:3、4:5、2:3、3:2、16:9、1:1、9:16 或原图比例。未指定时不要随机选择其他比例。3:5 是画幅，不是低分辨率缩略图或文件编码格式。
 
 ## 输入与 Scene Card
 
@@ -63,6 +77,7 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 生成前在内部建立 `Scene Card`：
 
 - 场景、处理与呈现模式
+- 原图方向、选定画幅与照片角色
 - 主体、情绪中心和语义最小集
 - 人物身份保护项
 - 关键地貌、建筑、物件与空间关系
@@ -72,6 +87,7 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 - 空间、路径、交接和情绪留白候选
 - 语义色或结构色
 - 叠图时的照片核、转译场、共享骨架与交接类型
+- 蒸馏时的语义核心、情绪张力、空间手势、来源隐喻、主动省略与解释余地
 - 对比时的布局、顺序和精确标签
 
 默认不展示 Scene Card。
@@ -85,7 +101,7 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 - 平远：沿江湖、岸线、田野、桌面或墙光展开。
 - 游观视点：多素材时受控移动视点，但保持一个主语法。
 
-默认竖幅 3:5 包含下方或下侧摄影落脚点、中段空气间隔、上方或纵深焦点，以及连贯向上或斜向眼动路径。
+竖幅 3:5 包含下方或下侧摄影落脚点、中段空气间隔、上方或纵深焦点，以及连贯向上或斜向眼动路径。横幅 5:3 以侧向游观、层层递远和不被平均切断的留白组织空间。
 
 日常小景仍按摄影空间处理：例如瓶是落脚点，主枝是高远路径，墙影是中景，墙光是无画处。不得凭空补山、亭、鹤、舟或古董道具。
 
@@ -105,6 +121,22 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 6. 默认不生成图中文字；用户要求时使用其精确文字，未提供文字时只生成 2 至 6 个汉字。
 
 详细分配、材料关键词、四段提示词和修正规则见 [layered-composite.md](references/layered-composite.md)。进行任何叠图生成前必须读取该文件。
+
+## `jingshan-distilled`
+
+蒸馏不是滤镜、描摹、照片转插画或删除主体后的空白海报。原图只作为语义参考，最终仍是一张具有可信光线、银盐层次和集锦摄影空间的完整画意摄影作品。
+
+生成前建立 `Distillation Card`：
+
+- 一句语义核心与一组必须以新形式保留的事实锚点。
+- 一项情绪张力，例如接近与疏离、遮蔽与显现、停留与远行。
+- 一条来自原图的主空间手势，例如上升、横渡、回望、聚拢或消散。
+- 一个有来源依据的视觉隐喻；没有必要时不强行添加。
+- 被主动删除的现实细节与仍保持开放的解释空间。
+
+最终提示词把原图标为“仅作语义与构图参考”，并明确禁止嵌入照片碎片、照片窗口、真实像素区域、原图裁片、描摹、转描、原构图复刻和写实剪贴。重新生成的物象可以保留身份类别、方向、姿态与关系，但不得伪称为原照片像素。
+
+使用与其他模式相同的三远、无画处、颜色和摄影材质规则。默认无图中文字，不采用高饱和色块、自由编辑排版、通用撕纸 zine 或纯插画语言。复杂判断时读取 [visual-grammar.md](references/visual-grammar.md) 的蒸馏章节。
 
 ## `before-after`
 
@@ -185,19 +217,27 @@ python <skill-root>/scripts/build_comparison.py `
 
 读取 `layered-composite.md`，分别写画布分配、两张参考职责、共享骨架与材料交接、平面材质与禁区。只写能转化为可见像素的指令，不写理论、艺术家生平、文件路径或关键词堆砌。
 
+### 蒸馏四段
+
+1. 画幅与注意力几何：选定比例、主动形群、主要无画处、眼动路径与解释余地。
+2. 语义蒸馏：语义核心、事实锚点、情绪张力、空间手势、来源隐喻与主动省略。
+3. 郎静山式重构：三远、集锦操作、银盐层次、颜色模式与新生成物象的关系。
+4. 无照片禁区：原图仅作语义参考；禁止照片碎片、摄影窗口、描摹、原构图复制、通用插画与 zine 海报化。
+
 ## 生成流程
 
 1. 检查全部照片；本地图片先以原尺寸查看。
 2. 分别确定场景、处理和呈现模式。
 3. 指定主照片和辅助角色，舍弃冲突素材。
 4. 建立 Scene Card、语义最小集和 Blankness Map。
-5. 选择空间语法、竖幅结构、颜色模式和摄影材质。
-6. 生成或复用 `jingshan-single` 底片。
+5. 选择空间语法、画幅路由、颜色模式和摄影材质。
+6. `jingshan-single` 直接生成独立底片；`jingshan-layered` 先生成或复用合格底片；`jingshan-distilled` 先完成 Distillation Card。
 7. 用户要求叠图时，读取分层参考并以原图和底片作为明确双参考生成。
-8. 在正常尺寸与小屏预览检查最终创作成图；小屏预览只是 QA 副本，不是输出尺寸。
-9. 仅在存在明确失败时，对用户请求的最终创作阶段进行一次针对性重生成。
-10. 用户要求对比时，在创作成图通过后运行确定性脚本。
-11. 返回请求的交付物与简短中文创作思路。
+8. 用户要求蒸馏时，只把原图作为语义参考生成，并检查最终画面没有照片区域。
+9. 在正常尺寸与小屏预览检查最终创作成图；小屏预览只是 QA 副本，不是输出尺寸。
+10. 仅在存在明确失败时，对用户请求的最终创作阶段进行一次针对性重生成。
+11. 用户要求对比时，在创作成图通过后运行确定性脚本。
+12. 返回请求的交付物与简短中文创作思路。
 
 ## 针对性修正
 
@@ -209,6 +249,8 @@ python <skill-root>/scripts/build_comparison.py `
 - 叠图像剪贴簿：删除任意纸片、胶带、蕾丝、装饰标签和厚阴影，恢复共享骨架。
 - 照片核失真：扩大未经改写的真实区域并恢复原始几何。
 - 只有并排没有叠合：让一个来源形状穿过材料交接。
+- 蒸馏仍有照片块：删除照片窗口、写实裁片、描摹边缘与原构图复刻，重新生成完整摄影空间。
+- 蒸馏变成插画海报：恢复可信光线、银盐调子、镜头关系与集锦摄影层次，删除编辑排版和装饰图形。
 - 黑白发灰：重建深黑、中灰和高光。
 - 颜色装饰：删除没有来源和结构作用的色相。
 - 对比板裁切或变形：重新用 contain 排版，不调用生成模型。
@@ -226,9 +268,9 @@ python <skill-root>/scripts/build_comparison.py `
 
 ## 输出契约
 
-### 单图或叠图
+### 单图、叠图或蒸馏
 
-返回成图和一至两句中文创作思路，说明真实照片锚点、空间重构、无画处或材料交接。
+返回成图和一至两句中文创作思路，按模式说明照片事实、真实照片锚点、语义蒸馏、空间重构、无画处或材料交接。
 
 ### 前后对比
 
@@ -243,6 +285,7 @@ python <skill-root>/scripts/build_comparison.py `
 ## 质量门
 
 - 场景、处理与呈现模式是否分别正确？
+- 画幅是否遵循用户要求，或正确路由到竖幅 3:5、横幅 5:3 或必要的原图比例？
 - 主场景和语义最小集是否仍可辨认？
 - 人物身份与细节是否保持？
 - 单图是否具有摄影落脚点、空气间隔与远景焦点？
@@ -250,6 +293,7 @@ python <skill-root>/scripts/build_comparison.py `
 - 每块主要无画处是否至少承担两种功能？
 - 叠图是否保留真实照片核、郎静山转译场和共享来源骨架？
 - 叠图交接是否可见、狭窄、不规则且没有剪贴簿感？
+- 蒸馏是否完全没有照片碎片、摄影窗口、描摹和原构图复刻，同时仍像画意摄影而非通用插画？
 - 颜色是否遵守模式且没有凭空增加色相？
 - 画面是否避免无来源“中国风”符号？
 - 正常尺寸和小屏 QA 是否都有清楚层级；交付是否保持正常尺寸？
