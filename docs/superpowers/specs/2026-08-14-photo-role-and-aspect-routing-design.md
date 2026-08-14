@@ -177,6 +177,17 @@ Implementation will update:
 - the portable prompt;
 - the OpenAI agent metadata if its description needs the new trigger terms.
 
+The GitHub repository short description remains plain text because GitHub does not support embedded images in that field. It should mention that before/after examples are available. Both READMEs will place a visible comparison example near the introduction using project-owned demonstration assets under `docs/images/`.
+
+The public example must:
+
+- show an exact demonstration source beside or above the generated result;
+- be generated from project-owned or newly created synthetic source material;
+- avoid the user's private photographs and third-party example artwork;
+- identify synthetic source material transparently when used;
+- include useful alt text and a compact file size suitable for GitHub;
+- use the deterministic comparison script so neither panel is generatively rewritten or cropped.
+
 The release should be published as a new version rather than replacing `v1.0.0`. The installable archive must retain one top-level Skill folder and the established six-file layout unless a required reference file is added intentionally.
 
 ## Validation
@@ -193,6 +204,7 @@ Add or revise evaluation cases for:
 - color remaining within the selected existing color mode;
 - horizontal and vertical before/after boards containing both images without crop;
 - response credit remaining outside the image.
+- README comparison media rendering from the public GitHub URL with both panels legible.
 
 Validate frontmatter, Skill package structure, README links, portable-prompt consistency, comparison-script behavior, installed-copy synchronization, and release archive hash before publication.
 
