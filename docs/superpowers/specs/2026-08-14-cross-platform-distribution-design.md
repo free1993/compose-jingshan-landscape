@@ -100,7 +100,7 @@ Before release:
 ## Success Criteria
 
 - Searching GitHub for `compose-jingshan-landscape` returns the repository.
-- A Codex user can install from `free1993/compose-jingshan-landscape` using the documented Skill path.
+- A Codex user can install from `junhaogege6/compose-jingshan-landscape` using the documented Skill path.
 - An AgentKit user can import the release ZIP without restructuring it.
 - A user of a non-Skill host can use `PORTABLE_PROMPT.md` without Codex-specific instructions.
 - No documentation claims automatic Codex directory listing or native consumer Doubao Skill installation.

@@ -22,7 +22,7 @@
 compose-jingshan-landscape
 ```
 
-GitHub 仓库：[free1993/compose-jingshan-landscape](https://github.com/free1993/compose-jingshan-landscape)
+GitHub 仓库：[junhaogege6/compose-jingshan-landscape](https://github.com/junhaogege6/compose-jingshan-landscape)
 
 公开 GitHub 仓库可以通过名称搜索，但不会因此自动进入 Codex、ChatGPT 或其他产品的官方 Skill/Plugin Directory；目录发布属于独立流程。
 
@@ -46,7 +46,7 @@ Skill 默认保留主体身份、关键动作和照片事实，不以“水墨�
 直接提出：
 
 ```text
-安装 GitHub 仓库 free1993/compose-jingshan-landscape 里的 compose-jingshan-landscape Skill
+安装 GitHub 仓库 junhaogege6/compose-jingshan-landscape 里的 compose-jingshan-landscape Skill
 ```
 
 ### 手动安装到 Codex
@@ -54,7 +54,7 @@ Skill 默认保留主体身份、关键动作和照片事实，不以“水墨�
 macOS / Linux：
 
 ```bash
-git clone https://github.com/free1993/compose-jingshan-landscape.git
+git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 mkdir -p ~/.codex/skills
 cp -R compose-jingshan-landscape/compose-jingshan-landscape ~/.codex/skills/
 ```
@@ -62,7 +62,7 @@ cp -R compose-jingshan-landscape/compose-jingshan-landscape ~/.codex/skills/
 Windows PowerShell：
 
 ```powershell
-git clone https://github.com/free1993/compose-jingshan-landscape.git
+git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 New-Item -ItemType Directory -Force "$HOME\.codex\skills" | Out-Null
 Copy-Item -Recurse ".\compose-jingshan-landscape\compose-jingshan-landscape" "$HOME\.codex\skills\compose-jingshan-landscape"
 ```
@@ -71,7 +71,7 @@ Copy-Item -Recurse ".\compose-jingshan-landscape\compose-jingshan-landscape" "$H
 
 ### ZIP 导入
 
-从 [Releases](https://github.com/free1993/compose-jingshan-landscape/releases) 下载：
+从 [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases) 下载：
 
 ```text
 compose-jingshan-landscape-v1.1.0.zip
@@ -153,7 +153,7 @@ compose-jingshan-landscape/
 
 ## 发布包
 
-标准发布包只包含可安装 Skill，不包含 README、演示图、设计文档或仓库元数据。发布版本：[v1.1.0](https://github.com/free1993/compose-jingshan-landscape/releases/tag/v1.1.0)。
+标准发布包只包含可安装 Skill，不包含 README、演示图、设计文档或仓库元数据。发布版本：[v1.1.0](https://github.com/junhaogege6/compose-jingshan-landscape/releases/tag/v1.1.0)。
 
 ## 隐私
 

@@ -22,7 +22,7 @@ Use the exact identifier in GitHub or an AI tool that can search GitHub:
 compose-jingshan-landscape
 ```
 
-Repository: [free1993/compose-jingshan-landscape](https://github.com/free1993/compose-jingshan-landscape)
+Repository: [junhaogege6/compose-jingshan-landscape](https://github.com/junhaogege6/compose-jingshan-landscape)
 
 A public GitHub repository is searchable by name, but it is not automatically listed in the official Codex, ChatGPT, or third-party Skill/Plugin Directory. Directory publication is a separate process.
 
@@ -44,7 +44,7 @@ The Skill preserves subject identity, meaningful action, and photographic facts 
 ### Ask Codex to install from GitHub
 
 ```text
-Install the compose-jingshan-landscape Skill from the GitHub repository free1993/compose-jingshan-landscape.
+Install the compose-jingshan-landscape Skill from the GitHub repository junhaogege6/compose-jingshan-landscape.
 ```
 
 ### Manual Codex installation
@@ -52,7 +52,7 @@ Install the compose-jingshan-landscape Skill from the GitHub repository free1993
 macOS / Linux:
 
 ```bash
-git clone https://github.com/free1993/compose-jingshan-landscape.git
+git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 mkdir -p ~/.codex/skills
 cp -R compose-jingshan-landscape/compose-jingshan-landscape ~/.codex/skills/
 ```
@@ -60,7 +60,7 @@ cp -R compose-jingshan-landscape/compose-jingshan-landscape ~/.codex/skills/
 Windows PowerShell:
 
 ```powershell
-git clone https://github.com/free1993/compose-jingshan-landscape.git
+git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 New-Item -ItemType Directory -Force "$HOME\.codex\skills" | Out-Null
 Copy-Item -Recurse ".\compose-jingshan-landscape\compose-jingshan-landscape" "$HOME\.codex\skills\compose-jingshan-landscape"
 ```
@@ -69,7 +69,7 @@ Open a new task after installation. Restart the host application if the Skill do
 
 ### ZIP import
 
-Download `compose-jingshan-landscape-v1.1.0.zip` from [Releases](https://github.com/free1993/compose-jingshan-landscape/releases). The archive contains exactly one top-level Skill folder with `SKILL.md` at its root.
+Download `compose-jingshan-landscape-v1.1.0.zip` from [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases). The archive contains exactly one top-level Skill folder with `SKILL.md` at its root.
 
 ## Compatibility
 
@@ -145,7 +145,7 @@ compose-jingshan-landscape/
 
 ## Release package
 
-The standard release archive contains only the installable Skill. It excludes repository documentation, demonstration images, design notes, and Git metadata. Release: [v1.1.0](https://github.com/free1993/compose-jingshan-landscape/releases/tag/v1.1.0).
+The standard release archive contains only the installable Skill. It excludes repository documentation, demonstration images, design notes, and Git metadata. Release: [v1.1.0](https://github.com/junhaogege6/compose-jingshan-landscape/releases/tag/v1.1.0).
 
 ## Privacy
 
