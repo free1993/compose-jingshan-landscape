@@ -21,7 +21,7 @@ Skill 默认保留主体身份、关键动作与照片事实，不以“水墨�
 在 Codex 中直接提出：
 
 ```text
-安装当前 GitHub 仓库里的 compose-jingshan-landscape Skill
+安装 GitHub 仓库 free1993/compose-jingshan-landscape 里的 compose-jingshan-landscape Skill
 ```
 
 也可以将仓库中的 `compose-jingshan-landscape` 文件夹复制到：
