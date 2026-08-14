@@ -36,8 +36,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--background",
-        default="#ede8dc",
-        help="Board background as #RGB or #RRGGBB",
+        default="#E4E0D5",
+        help="Board background as #RGB or #RRGGBB (default: #E4E0D5)",
     )
     parser.add_argument(
         "--labels",

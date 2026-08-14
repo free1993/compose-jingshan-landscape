@@ -10,9 +10,9 @@
 
 ## 对比示例
 
-![AI 演示原图与郎静山取向 5:3 成图的无裁切对比](docs/images/jingshan-before-after-example.webp)
+![AI 演示原图与郎静山取向 5:3 暖灰银盐成图的无裁切对比](docs/images/jingshan-before-after-example.webp)
 
-左侧为项目自有的 AI 演示原图，右侧为按本 Skill 规则生成的横幅 `5:3` 成图；对比板由确定性脚本排版，两侧均未被生成模型二次改写或裁切。演示图只用于说明工作流，不代表历史作品或郎静山先生原作。
+左侧为项目自有的 AI 演示原图，右侧为按本 Skill 规则生成的横幅 `5:3` 暖灰银盐成图；其综合色调采用象牙高光、暖灰中间调与炭黑暗部，不使用浓棕复古或宣纸黄。对比板由确定性脚本排版，两侧均未被生成模型二次改写或裁切。演示图只用于说明工作流，不代表历史作品或郎静山先生原作。
 
 ## 搜索名称
 
@@ -74,7 +74,7 @@ Copy-Item -Recurse ".\compose-jingshan-landscape\compose-jingshan-landscape" "$H
 从 [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases) 下载：
 
 ```text
-compose-jingshan-landscape-v1.1.0.zip
+compose-jingshan-landscape-v1.1.1.zip
 ```
 
 ZIP 内只有一个顶层 Skill 文件夹，`SKILL.md` 位于该文件夹根目录，可用于支持 Agent Skills ZIP 导入的产品。
@@ -131,6 +131,7 @@ $compose-jingshan-landscape 输出郎静山改单图，并生成原图/成图对
 
 - 支持 1 张主图，并可选最多 3 张辅助图。
 - 原图颜色没有硬性限制；Skill 会根据主体、光线与意境进行受控减色，而不是统一套用单一色调。
+- 默认 `silver-gelatin` 是克制的暖灰银盐调，不是中性数字灰、棕褐老照片或黄色宣纸滤镜。
 - 未指定比例时自动在竖幅 `3:5` 与横幅 `5:3` 间路由；支持 `4:5`、`2:3`、`3:2`、`16:9`、`1:1`、`9:16` 和原图比例。
 - 艺术成图依赖宿主具备图像编辑或生成能力。
 - `scripts/build_comparison.py` 用于确定性对比排版，需要 Pillow；它不参与艺术生成。
@@ -153,7 +154,7 @@ compose-jingshan-landscape/
 
 ## 发布包
 
-标准发布包只包含可安装 Skill，不包含 README、演示图、设计文档或仓库元数据。发布版本：[v1.1.0](https://github.com/junhaogege6/compose-jingshan-landscape/releases/tag/v1.1.0)。
+标准发布包只包含可安装 Skill，不包含 README、演示图、设计文档或仓库元数据。发布版本：[v1.1.1](https://github.com/junhaogege6/compose-jingshan-landscape/releases/tag/v1.1.1)。
 
 ## 隐私
 

@@ -10,9 +10,9 @@ An Agent Skill for photo editing and image generation inspired by Lang Jingshan'
 
 ## Comparison example
 
-![Uncropped comparison of an AI demonstration source and a 5:3 Lang Jingshan-inspired result](docs/images/jingshan-before-after-example.webp)
+![Uncropped comparison of an AI demonstration source and a warm silver-gelatin 5:3 Lang Jingshan-inspired result](docs/images/jingshan-before-after-example.webp)
 
-The left panel is a project-owned AI demonstration source. The right panel is the generated `5:3` result. The deterministic comparison script assembles both panels without generative rewriting or cropping. This workflow example is not a historical photograph or an artwork by Lang Jingshan.
+The left panel is a project-owned AI demonstration source. The right panel is the generated `5:3` warm silver-gelatin result, using ivory highlights, warm-gray middle tones, and charcoal shadows rather than heavy sepia or yellow paper. The deterministic comparison script assembles both panels without generative rewriting or cropping. This workflow example is not a historical photograph or an artwork by Lang Jingshan.
 
 ## Search name
 
@@ -69,7 +69,7 @@ Open a new task after installation. Restart the host application if the Skill do
 
 ### ZIP import
 
-Download `compose-jingshan-landscape-v1.1.0.zip` from [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases). The archive contains exactly one top-level Skill folder with `SKILL.md` at its root.
+Download `compose-jingshan-landscape-v1.1.1.zip` from [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases). The archive contains exactly one top-level Skill folder with `SKILL.md` at its root.
 
 ## Compatibility
 
@@ -123,6 +123,7 @@ $compose-jingshan-landscape Produce the standalone artwork and an exact source/r
 
 - Accept one primary photograph and up to three optional supporting photographs.
 - There is no mandatory source color palette. The Skill performs controlled color reduction according to subject, light, and mood instead of applying one fixed grade.
+- The default `silver-gelatin` mode uses restrained warm-gray print tonality, not neutral digital grayscale, heavy sepia, or a yellow rice-paper filter.
 - Without an explicit ratio, the Skill routes between portrait `3:5` and landscape `5:3`; explicit `4:5`, `2:3`, `3:2`, `16:9`, `1:1`, `9:16`, and original-ratio output are supported.
 - Artistic output requires an image-editing or image-generation capability.
 - `scripts/build_comparison.py` requires Pillow and creates deterministic comparison layouts; it does not generate the artwork.
@@ -145,7 +146,7 @@ compose-jingshan-landscape/
 
 ## Release package
 
-The standard release archive contains only the installable Skill. It excludes repository documentation, demonstration images, design notes, and Git metadata. Release: [v1.1.0](https://github.com/junhaogege6/compose-jingshan-landscape/releases/tag/v1.1.0).
+The standard release archive contains only the installable Skill. It excludes repository documentation, demonstration images, design notes, and Git metadata. Release: [v1.1.1](https://github.com/junhaogege6/compose-jingshan-landscape/releases/tag/v1.1.1).
 
 ## Privacy
 

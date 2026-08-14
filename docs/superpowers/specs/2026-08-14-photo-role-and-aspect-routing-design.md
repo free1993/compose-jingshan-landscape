@@ -124,7 +124,7 @@ The final prompt must identify the source as a semantic reference only and prohi
 
 Input color remains unrestricted. Continue to analyze source color by semantic role, value structure, temperature, and atmosphere.
 
-- `silver-gelatin` remains the default.
+- `silver-gelatin` remains the default, using luminous ivory highlights, low-saturation warm-gray middle tones, charcoal shadows, and a small amount of deep neutral black.
 - `source-tint` may retain one meaningful low-saturation source color.
 - `muted-original` may preserve a restrained version of the source palette when color is essential to identity or season.
 - Do not adopt a mandatory high-chroma accent from the reference project.
