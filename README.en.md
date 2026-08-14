@@ -6,7 +6,7 @@
 
 An Agent Skill for photo editing and image generation inspired by Lang Jingshan's composite photography and Chinese pictorialist landscape tradition. It transforms mobile landscapes, figures in landscape, and quiet everyday scenes through layered mountains, atmospheric depth, poetic negative space, and the Chinese idea of the meaningful unpainted area.
 
-> A tribute to Lang Jingshan, widely recognized as a pioneering figure in Chinese photography. This independent learning and contemporary visual experiment is not officially affiliated with or endorsed by Lang Jingshan, his family, or related institutions.
+> A tribute to Lang Jingshan, widely recognized as a pioneering figure in Chinese photography. This independent learning and contemporary visual experiment is not officially affiliated with or endorsed by Lang Jingshan, his family, or related institutions. The distribution approach and creative exploration were informed in part by [Zeejay0's Gathered Scenes Zine Skill](https://github.com/Zeejay0/gathered-scenes-zine-skill).
 
 ## Search name
 
@@ -137,4 +137,3 @@ The repository and release package contain instructions, reference specification
 ## License
 
 [MIT License](LICENSE)
-
