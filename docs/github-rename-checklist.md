@@ -18,7 +18,7 @@
 
 ## 正式改名前
 
-- 确认 README、README.en、`SKILL.md`、`agents/openai.yaml` 与调用示例全部使用 `lang-jingshan-photo-skill`
+- 确认 README、README.en、`skills/lang-jingshan-photo-skill/SKILL.md`、`agents/openai.yaml` 与调用示例全部使用 `lang-jingshan-photo-skill`
 - 确认本地已安装副本也使用 `~/.codex/skills/lang-jingshan-photo-skill`
 - 确认是否要保留旧仓库名关键词 `compose-jingshan-landscape` 作为过渡搜索词
 - 准备一个新版本号，例如 `v1.1.2` 或 `v1.2.0`
@@ -39,7 +39,7 @@
 - Release 资产下载链接是否仍可用；如不确定，以 README 中的新链接为准
 - README 中的安装命令是否仍指向正确的文件夹名
 - 任何截图、教程、帖子里的旧命名是否需要补一条说明
-- `PORTABLE_PROMPT.md` 是否仍正确引用 `lang-jingshan-photo-skill/SKILL.md`
+- `PORTABLE_PROMPT.md` 是否仍正确引用 `skills/lang-jingshan-photo-skill/SKILL.md`
 
 ## 建议的过渡文案
 

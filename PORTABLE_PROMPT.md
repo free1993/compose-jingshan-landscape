@@ -2,7 +2,7 @@
 
 **作者 / Author：junhaogege_**
 
-这是给豆包普通客户端及其他不能原生安装 Agent Skills 的 AI 使用的便携提示词。它保留主要创作判断，但不替代完整 [`SKILL.md`](lang-jingshan-photo-skill/SKILL.md) 与参考文件。
+这是给豆包普通客户端及其他不能原生安装 Agent Skills 的 AI 使用的便携提示词。它保留主要创作判断，但不替代完整 [`SKILL.md`](skills/lang-jingshan-photo-skill/SKILL.md) 与参考文件。
 
 ## 使用方法
 

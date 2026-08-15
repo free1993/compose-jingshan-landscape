@@ -2,7 +2,7 @@
 
 **Author: junhaogege_**
 
-[中文](README.md) · [Comparison](#comparison-example) · [Install](#installation) · [GitHub transition](#github-transition) · [Compatibility](#compatibility) · [Portable prompt](#doubao-and-general-ai-tools) · [Release](#release-package)
+[中文](README.md) · [Comparison](#comparison-example) · [Archive](#work-archive) · [Install](#installation) · [GitHub transition](#github-transition) · [Compatibility](#compatibility) · [Portable prompt](#doubao-and-general-ai-tools) · [Commercial licensing](#commercial-licensing) · [Release](#release-package)
 
 An Agent Skill for photo editing and image generation inspired by Lang Jingshan's composite photography and Chinese pictorialist landscape tradition. It transforms mobile landscapes, figures in landscape, and quiet everyday scenes through source-faithful editing, visible real-scene layering, no-photo semantic distillation, atmospheric depth, and the Chinese idea of the meaningful unpainted area.
 
@@ -13,6 +13,13 @@ An Agent Skill for photo editing and image generation inspired by Lang Jingshan'
 ![Uncropped comparison of an AI demonstration source and a warm silver-gelatin 5:3 Lang Jingshan-inspired result](docs/images/jingshan-before-after-example.webp)
 
 The left panel is a project-owned AI demonstration source. The right panel is the generated `5:3` warm silver-gelatin result, using ivory highlights, warm-gray middle tones, and charcoal shadows rather than heavy sepia or yellow paper. The deterministic comparison script assembles both panels without generative rewriting or cropping. This workflow example is not a historical photograph or an artwork by Lang Jingshan.
+
+## Work archive
+
+The repository now follows a project-repo style that is closer to Zeejay0's update pattern: the README is the main entry point, the installable Skill lives under `skills/`, and public cases plus observation notes live under `examples/`.
+
+- Public case index: [examples/README.md](examples/README.md)
+- Installable Skill entry: [skills/lang-jingshan-photo-skill/SKILL.md](skills/lang-jingshan-photo-skill/SKILL.md)
 
 ## Search name
 
@@ -58,7 +65,7 @@ macOS / Linux:
 ```bash
 git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 mkdir -p ~/.codex/skills
-cp -R compose-jingshan-landscape/lang-jingshan-photo-skill ~/.codex/skills/
+cp -R compose-jingshan-landscape/skills/lang-jingshan-photo-skill ~/.codex/skills/
 ```
 
 Windows PowerShell:
@@ -66,7 +73,7 @@ Windows PowerShell:
 ```powershell
 git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 New-Item -ItemType Directory -Force "$HOME\.codex\skills" | Out-Null
-Copy-Item -Recurse ".\compose-jingshan-landscape\lang-jingshan-photo-skill" "$HOME\.codex\skills\lang-jingshan-photo-skill"
+Copy-Item -Recurse ".\compose-jingshan-landscape\skills\lang-jingshan-photo-skill" "$HOME\.codex\skills\lang-jingshan-photo-skill"
 ```
 
 Open a new task after installation. Restart the host application if the Skill does not appear immediately.
@@ -82,6 +89,11 @@ Two naming layers currently coexist:
 - Formal Skill name, invocation name, and local install name: `lang-jingshan-photo-skill`
 - Current public GitHub repository path: `junhaogege6/compose-jingshan-landscape`
 
+The structure is also split in two layers:
+
+- Project-repo entry: `README.md`, `examples/`, `docs/`, and `assets/`
+- Installable Skill: `skills/lang-jingshan-photo-skill/`
+
 This keeps the Skill-side installation language clean while preserving the existing public repository and release links. When you are ready to rename the GitHub remote itself, use this checklist:
 
 [GitHub rename checklist](docs/github-rename-checklist.md)
@@ -90,7 +102,7 @@ This keeps the Skill-side installation language clean while preserving the exist
 
 | Product or environment | Method | Compatibility level |
 | --- | --- | --- |
-| Codex | Install the Skill folder from this repository | Native Agent Skill |
+| Codex | Install `skills/lang-jingshan-photo-skill` from this repository | Native Agent Skill |
 | ChatGPT Skills | Upload the release ZIP when Skills are available for the account | Native open format; availability depends on plan and workspace settings |
 | TRAE | Import the folder containing `SKILL.md` | Native Agent Skills format |
 | Volcengine AgentKit | Upload the release ZIP to Skills Center | ZIP import |
@@ -151,17 +163,33 @@ compose-jingshan-landscape/
 ├── README.en.md
 ├── PORTABLE_PROMPT.md
 ├── LICENSE
-├── docs/images/                 # public comparison example
-└── lang-jingshan-photo-skill/
-    ├── SKILL.md
-    ├── agents/openai.yaml
-    ├── references/
-    └── scripts/build_comparison.py
+├── assets/
+│   └── brand/
+├── examples/
+│   └── README.md
+├── docs/
+│   └── images/
+└── skills/
+    └── lang-jingshan-photo-skill/
+        ├── SKILL.md
+        ├── agents/openai.yaml
+        ├── references/
+        └── scripts/build_comparison.py
 ```
 
 ## Release package
 
-The standard release archive contains only the installable Skill. It excludes repository documentation, demonstration images, design notes, and Git metadata. The current public release page remains under the older repository path: [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases).
+The main update path now follows the repository's default branch, closer to a "project repo plus skills subdirectory" model; ZIP remains an optional distribution format. The standard release archive contains only the installable Skill. It excludes repository documentation, demonstration images, design notes, and Git metadata. The current public release page remains under the older repository path: [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases).
+
+## Commercial licensing
+
+This project now uses a personal non-commercial license instead of an MIT-style free commercial license.
+
+- Allowed: free personal learning, research, experimentation, and hobby use
+- Not allowed without permission: paid generation, commissioned work, classes, consulting, SaaS/API use, client work, internal company use, commercial training, or any other direct or indirect commercial use
+- For commercial licensing: contact the author first and obtain clear written permission
+
+The default business contact path is the GitHub account [junhaogege6](https://github.com/junhaogege6), unless another contact method is explicitly listed in this repository.
 
 ## Privacy
 
@@ -169,4 +197,4 @@ In addition to instructions, references, and the comparison-layout script, the r
 
 ## License
 
-[MIT License](LICENSE)
+[Personal Non-Commercial License](LICENSE)

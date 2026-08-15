@@ -2,7 +2,7 @@
 
 **作者 / Author：junhaogege_**
 
-[English](README.en.md) · [对比示例](#对比示例) · [安装](#安装) · [GitHub 过渡](#github-过渡) · [兼容性](#兼容性) · [豆包与通用-ai](#豆包与通用-ai) · [发布包](#发布包)
+[English](README.en.md) · [对比示例](#对比示例) · [作品档案](#作品档案) · [安装](#安装) · [GitHub 过渡](#github-过渡) · [兼容性](#兼容性) · [豆包与通用-ai](#豆包与通用-ai) · [商业授权](#商业授权) · [发布包](#发布包)
 
 一个以郎静山集锦摄影与中国画意摄影为主要方向的摄影修图 Agent Skill。它把手机拍摄的风景、人在景中与日常小景，重构为具有云山层次、诗性留白和“无画处”意识的作品，同时支持摄影改单图、同画面实景叠层、无照片块影像蒸馏及原图/成图对比。
 
@@ -13,6 +13,13 @@
 ![AI 演示原图与郎静山取向 5:3 暖灰银盐成图的无裁切对比](docs/images/jingshan-before-after-example.webp)
 
 左侧为项目自有的 AI 演示原图，右侧为按本 Skill 规则生成的横幅 `5:3` 暖灰银盐成图；其综合色调采用象牙高光、暖灰中间调与炭黑暗部，不使用浓棕复古或宣纸黄。对比板由确定性脚本排版，两侧均未被生成模型二次改写或裁切。演示图只用于说明工作流，不代表历史作品或郎静山先生原作。
+
+## 作品档案
+
+本仓库改为更接近项目仓的更新方式：README 负责总入口，真正可安装的 Skill 放在 `skills/` 下，公开案例与观察说明收在 `examples/`。
+
+- 公开案例入口：[examples/README.md](examples/README.md)
+- 可安装 Skill 入口：[skills/lang-jingshan-photo-skill/SKILL.md](skills/lang-jingshan-photo-skill/SKILL.md)
 
 ## 搜索名称
 
@@ -60,7 +67,7 @@ macOS / Linux：
 ```bash
 git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 mkdir -p ~/.codex/skills
-cp -R compose-jingshan-landscape/lang-jingshan-photo-skill ~/.codex/skills/
+cp -R compose-jingshan-landscape/skills/lang-jingshan-photo-skill ~/.codex/skills/
 ```
 
 Windows PowerShell：
@@ -68,7 +75,7 @@ Windows PowerShell：
 ```powershell
 git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 New-Item -ItemType Directory -Force "$HOME\.codex\skills" | Out-Null
-Copy-Item -Recurse ".\compose-jingshan-landscape\lang-jingshan-photo-skill" "$HOME\.codex\skills\lang-jingshan-photo-skill"
+Copy-Item -Recurse ".\compose-jingshan-landscape\skills\lang-jingshan-photo-skill" "$HOME\.codex\skills\lang-jingshan-photo-skill"
 ```
 
 安装后重新打开任务；若 Skill 没有立即出现，请重启宿主应用。
@@ -84,6 +91,11 @@ Copy-Item -Recurse ".\compose-jingshan-landscape\lang-jingshan-photo-skill" "$HO
 - 正式 Skill 名、调用名、本地安装名：`lang-jingshan-photo-skill`
 - 当前公开 GitHub 仓库路径：`junhaogege6/compose-jingshan-landscape`
 
+同时也有两层结构分工：
+
+- 项目仓入口：`README.md`、`examples/`、`docs/`、`assets/`
+- 可安装 Skill：`skills/lang-jingshan-photo-skill/`
+
 这样做是为了先把 Skill 侧的安装和调用收口，再保留旧仓库链接与发布页的可访问性。等你准备正式改 GitHub 远端仓库名时，可以直接按这份清单执行：
 
 [GitHub 改名清单](docs/github-rename-checklist.md)
@@ -92,7 +104,7 @@ Copy-Item -Recurse ".\compose-jingshan-landscape\lang-jingshan-photo-skill" "$HO
 
 | 产品或环境 | 使用方式 | 兼容级别 |
 | --- | --- | --- |
-| Codex | 安装仓库中的 Skill 文件夹 | 原生 Agent Skill |
+| Codex | 安装仓库中的 `skills/lang-jingshan-photo-skill` 文件夹 | 原生 Agent Skill |
 | ChatGPT Skills | 在账号支持 Skills 时上传发布 ZIP | 原生开放格式；可用性受套餐与工作区设置影响 |
 | TRAE | 导入包含 `SKILL.md` 的 Skill 文件夹 | 原生 Agent Skills 格式 |
 | 火山引擎 AgentKit | 上传发布 ZIP 到 Skills 中心 | ZIP 导入 |
@@ -153,17 +165,33 @@ compose-jingshan-landscape/
 ├── README.en.md
 ├── PORTABLE_PROMPT.md
 ├── LICENSE
-├── docs/images/                 # GitHub 对比演示
-└── lang-jingshan-photo-skill/
-    ├── SKILL.md
-    ├── agents/openai.yaml
-    ├── references/
-    └── scripts/build_comparison.py
+├── assets/
+│   └── brand/
+├── examples/
+│   └── README.md
+├── docs/
+│   └── images/
+└── skills/
+    └── lang-jingshan-photo-skill/
+        ├── SKILL.md
+        ├── agents/openai.yaml
+        ├── references/
+        └── scripts/build_comparison.py
 ```
 
 ## 发布包
 
-标准发布包只包含可安装 Skill，不包含 README、演示图、设计文档或仓库元数据。当前公开发布页仍在旧仓库路径下：[Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases)。
+仓库的主更新方式现在以主分支内容为准，更接近“项目仓 + skills 子目录”的持续更新方式；ZIP 仍保留为可选分发。标准发布包只包含可安装 Skill，不包含 README、演示图、设计文档或仓库元数据。当前公开发布页仍在旧仓库路径下：[Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases)。
+
+## 商业授权
+
+本项目现在采用“个人非商业许可”，不再允许基于 MIT 的自由商用。
+
+- 允许：个人学习、研究、实验、爱好用途下免费使用、安装和修改
+- 不允许：收费生成、代做、接单、课程、咨询、SaaS/API、客户项目、公司内部商业应用、商业培训、带货或其他任何直接或间接商业使用
+- 商业合作或商业授权：必须先联系本人，并取得明确书面许可
+
+商业联系默认通过 GitHub 账号 [junhaogege6](https://github.com/junhaogege6) 发起；也可以使用本仓库后续明确列出的其他联系方式。
 
 ## 隐私
 
@@ -171,4 +199,4 @@ compose-jingshan-landscape/
 
 ## 许可
 
-[MIT License](LICENSE)
+[个人非商业许可 / Personal Non-Commercial License](LICENSE)
