@@ -1,8 +1,8 @@
-# compose-jingshan-landscape
+# lang-jingshan-photo-skill
 
 **作者 / Author：junhaogege_**
 
-[English](README.en.md) · [对比示例](#对比示例) · [安装](#安装) · [兼容性](#兼容性) · [豆包与通用-ai](#豆包与通用-ai) · [发布包](#发布包)
+[English](README.en.md) · [对比示例](#对比示例) · [安装](#安装) · [GitHub 过渡](#github-过渡) · [兼容性](#兼容性) · [豆包与通用-ai](#豆包与通用-ai) · [发布包](#发布包)
 
 一个以郎静山集锦摄影与中国画意摄影为主要方向的摄影修图 Agent Skill。它把手机拍摄的风景、人在景中与日常小景，重构为具有云山层次、诗性留白和“无画处”意识的作品，同时支持摄影改单图、同画面实景叠层、无照片块影像蒸馏及原图/成图对比。
 
@@ -16,13 +16,17 @@
 
 ## 搜索名称
 
-在 GitHub 或支持 GitHub 搜索的 AI 中输入完整名称：
+在 GitHub 或支持 GitHub 搜索的 AI 中优先输入正式 Skill 名称：
 
 ```text
-compose-jingshan-landscape
+lang-jingshan-photo-skill
 ```
 
 GitHub 仓库：[junhaogege6/compose-jingshan-landscape](https://github.com/junhaogege6/compose-jingshan-landscape)
+
+当前公开仓库地址仍为旧路径 `compose-jingshan-landscape`；正式 Skill 名称与调用名改为 `lang-jingshan-photo-skill`，这样既保留现有发布链接，也能让 GitHub 内容搜索和 AI 安装描述更贴近最终名字。
+
+如果暂时搜不到，过渡期可再补搜一次旧仓库关键词 `compose-jingshan-landscape`。
 
 公开 GitHub 仓库可以通过名称搜索，但不会因此自动进入 Codex、ChatGPT 或其他产品的官方 Skill/Plugin Directory；目录发布属于独立流程。
 
@@ -46,7 +50,7 @@ Skill 默认保留主体身份、关键动作和照片事实，不以“水墨�
 直接提出：
 
 ```text
-安装 GitHub 仓库 junhaogege6/compose-jingshan-landscape 里的 compose-jingshan-landscape Skill
+安装 GitHub 仓库 junhaogege6/compose-jingshan-landscape 里的 lang-jingshan-photo-skill Skill
 ```
 
 ### 手动安装到 Codex
@@ -56,7 +60,7 @@ macOS / Linux：
 ```bash
 git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 mkdir -p ~/.codex/skills
-cp -R compose-jingshan-landscape/compose-jingshan-landscape ~/.codex/skills/
+cp -R compose-jingshan-landscape/lang-jingshan-photo-skill ~/.codex/skills/
 ```
 
 Windows PowerShell：
@@ -64,20 +68,25 @@ Windows PowerShell：
 ```powershell
 git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 New-Item -ItemType Directory -Force "$HOME\.codex\skills" | Out-Null
-Copy-Item -Recurse ".\compose-jingshan-landscape\compose-jingshan-landscape" "$HOME\.codex\skills\compose-jingshan-landscape"
+Copy-Item -Recurse ".\compose-jingshan-landscape\lang-jingshan-photo-skill" "$HOME\.codex\skills\lang-jingshan-photo-skill"
 ```
 
 安装后重新打开任务；若 Skill 没有立即出现，请重启宿主应用。
 
 ### ZIP 导入
 
-从 [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases) 下载：
+从 [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases) 下载最新 ZIP。压缩包内只有一个顶层 Skill 文件夹，`SKILL.md` 位于该文件夹根目录，可用于支持 Agent Skills ZIP 导入的产品。
 
-```text
-compose-jingshan-landscape-v1.1.1.zip
-```
+## GitHub 过渡
 
-ZIP 内只有一个顶层 Skill 文件夹，`SKILL.md` 位于该文件夹根目录，可用于支持 Agent Skills ZIP 导入的产品。
+目前有两层名字同时存在：
+
+- 正式 Skill 名、调用名、本地安装名：`lang-jingshan-photo-skill`
+- 当前公开 GitHub 仓库路径：`junhaogege6/compose-jingshan-landscape`
+
+这样做是为了先把 Skill 侧的安装和调用收口，再保留旧仓库链接与发布页的可访问性。等你准备正式改 GitHub 远端仓库名时，可以直接按这份清单执行：
+
+[GitHub 改名清单](docs/github-rename-checklist.md)
 
 ## 兼容性
 
@@ -108,23 +117,23 @@ OpenAI Skills 遵循开放 Agent Skills 标准，但每个宿主提供的图像�
 ## 使用示例
 
 ```text
-$compose-jingshan-landscape 用郎静山取向处理这张手机照片，保留花瓶和枝条，强化无画处。
+$lang-jingshan-photo-skill 用郎静山取向处理这张手机照片，保留花瓶和枝条，强化无画处。
 ```
 
 ```text
-$compose-jingshan-landscape 做同画面叠图：真实照片核清晰可辨，外围转为纸本云山与诗性留白。
+$lang-jingshan-photo-skill 做同画面叠图：真实照片核清晰可辨，外围转为纸本云山与诗性留白。
 ```
 
 ```text
-$compose-jingshan-landscape 把这张照片完全蒸馏成郎静山取向作品：原图只作语义参考，不保留照片块。
+$lang-jingshan-photo-skill 把这张照片完全蒸馏成郎静山取向作品：原图只作语义参考，不保留照片块。
 ```
 
 ```text
-$compose-jingshan-landscape 把这张横向山水处理成 5:3，保留完整岸线和侧向游观路径。
+$lang-jingshan-photo-skill 把这张横向山水处理成 5:3，保留完整岸线和侧向游观路径。
 ```
 
 ```text
-$compose-jingshan-landscape 输出郎静山改单图，并生成原图/成图对比板。
+$lang-jingshan-photo-skill 输出郎静山改单图，并生成原图/成图对比板。
 ```
 
 ## 颜色与输入
@@ -145,7 +154,7 @@ compose-jingshan-landscape/
 ├── PORTABLE_PROMPT.md
 ├── LICENSE
 ├── docs/images/                 # GitHub 对比演示
-└── compose-jingshan-landscape/
+└── lang-jingshan-photo-skill/
     ├── SKILL.md
     ├── agents/openai.yaml
     ├── references/
@@ -154,7 +163,7 @@ compose-jingshan-landscape/
 
 ## 发布包
 
-标准发布包只包含可安装 Skill，不包含 README、演示图、设计文档或仓库元数据。发布版本：[v1.1.1](https://github.com/junhaogege6/compose-jingshan-landscape/releases/tag/v1.1.1)。
+标准发布包只包含可安装 Skill，不包含 README、演示图、设计文档或仓库元数据。当前公开发布页仍在旧仓库路径下：[Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases)。
 
 ## 隐私
 

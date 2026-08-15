@@ -1,5 +1,5 @@
 ---
-name: compose-jingshan-landscape
+name: lang-jingshan-photo-skill
 description: "Transform user-supplied landscapes, figures in landscape, and poetic mobile-photo small scenes into Lang Jingshan-inspired Chinese pictorialist photography. Produce a source-faithful standalone reconstruction, a real-scene layered artwork with a recognizable photographic anchor, a no-photo semantic distillation, or an exact deterministic before/after board. Route portrait subjects to 3:5 and expansive landscapes to 5:3 unless the user specifies another ratio. Use for 郎静山、集锦摄影、画意摄影、中国山水摄影、云山留白、人在景中、日常小景、实景拼贴、叠图、照片核、影像蒸馏、完全重构、原图成图对比, or before/after requests; support one primary photo plus up to three optional supporting photos."
 ---
 

@@ -1,8 +1,8 @@
-# compose-jingshan-landscape
+# lang-jingshan-photo-skill
 
 **Author: junhaogege_**
 
-[中文](README.md) · [Comparison](#comparison-example) · [Install](#installation) · [Compatibility](#compatibility) · [Portable prompt](#doubao-and-general-ai-tools) · [Release](#release-package)
+[中文](README.md) · [Comparison](#comparison-example) · [Install](#installation) · [GitHub transition](#github-transition) · [Compatibility](#compatibility) · [Portable prompt](#doubao-and-general-ai-tools) · [Release](#release-package)
 
 An Agent Skill for photo editing and image generation inspired by Lang Jingshan's composite photography and Chinese pictorialist landscape tradition. It transforms mobile landscapes, figures in landscape, and quiet everyday scenes through source-faithful editing, visible real-scene layering, no-photo semantic distillation, atmospheric depth, and the Chinese idea of the meaningful unpainted area.
 
@@ -16,13 +16,17 @@ The left panel is a project-owned AI demonstration source. The right panel is th
 
 ## Search name
 
-Use the exact identifier in GitHub or an AI tool that can search GitHub:
+Use the formal Skill name first in GitHub or an AI tool that can search GitHub:
 
 ```text
-compose-jingshan-landscape
+lang-jingshan-photo-skill
 ```
 
 Repository: [junhaogege6/compose-jingshan-landscape](https://github.com/junhaogege6/compose-jingshan-landscape)
+
+The public repository URL still uses the older path `compose-jingshan-landscape`. The installable Skill name and invocation name now use `lang-jingshan-photo-skill` so the published links stay intact while search and installation language match the final identity.
+
+If search is inconsistent during the transition, try the older repository keyword `compose-jingshan-landscape` as a fallback.
 
 A public GitHub repository is searchable by name, but it is not automatically listed in the official Codex, ChatGPT, or third-party Skill/Plugin Directory. Directory publication is a separate process.
 
@@ -44,7 +48,7 @@ The Skill preserves subject identity, meaningful action, and photographic facts 
 ### Ask Codex to install from GitHub
 
 ```text
-Install the compose-jingshan-landscape Skill from the GitHub repository junhaogege6/compose-jingshan-landscape.
+Install the lang-jingshan-photo-skill Skill from the GitHub repository junhaogege6/compose-jingshan-landscape.
 ```
 
 ### Manual Codex installation
@@ -54,7 +58,7 @@ macOS / Linux:
 ```bash
 git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 mkdir -p ~/.codex/skills
-cp -R compose-jingshan-landscape/compose-jingshan-landscape ~/.codex/skills/
+cp -R compose-jingshan-landscape/lang-jingshan-photo-skill ~/.codex/skills/
 ```
 
 Windows PowerShell:
@@ -62,14 +66,25 @@ Windows PowerShell:
 ```powershell
 git clone https://github.com/junhaogege6/compose-jingshan-landscape.git
 New-Item -ItemType Directory -Force "$HOME\.codex\skills" | Out-Null
-Copy-Item -Recurse ".\compose-jingshan-landscape\compose-jingshan-landscape" "$HOME\.codex\skills\compose-jingshan-landscape"
+Copy-Item -Recurse ".\compose-jingshan-landscape\lang-jingshan-photo-skill" "$HOME\.codex\skills\lang-jingshan-photo-skill"
 ```
 
 Open a new task after installation. Restart the host application if the Skill does not appear immediately.
 
 ### ZIP import
 
-Download `compose-jingshan-landscape-v1.1.1.zip` from [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases). The archive contains exactly one top-level Skill folder with `SKILL.md` at its root.
+Download the latest ZIP from [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases). The archive contains exactly one top-level Skill folder with `SKILL.md` at its root.
+
+## GitHub transition
+
+Two naming layers currently coexist:
+
+- Formal Skill name, invocation name, and local install name: `lang-jingshan-photo-skill`
+- Current public GitHub repository path: `junhaogege6/compose-jingshan-landscape`
+
+This keeps the Skill-side installation language clean while preserving the existing public repository and release links. When you are ready to rename the GitHub remote itself, use this checklist:
+
+[GitHub rename checklist](docs/github-rename-checklist.md)
 
 ## Compatibility
 
@@ -100,23 +115,23 @@ This preserves the main creative decisions but is not the same as native Skill i
 ## Example requests
 
 ```text
-$compose-jingshan-landscape Rework this mobile photograph in a Lang Jingshan-inspired direction. Preserve the vase and branches and strengthen the meaningful unpainted space.
+$lang-jingshan-photo-skill Rework this mobile photograph in a Lang Jingshan-inspired direction. Preserve the vase and branches and strengthen the meaningful unpainted space.
 ```
 
 ```text
-$compose-jingshan-landscape Create one layered artwork with a clearly recognizable source-photo anchor dissolving into paper, mist, and pictorial mountain space.
+$lang-jingshan-photo-skill Create one layered artwork with a clearly recognizable source-photo anchor dissolving into paper, mist, and pictorial mountain space.
 ```
 
 ```text
-$compose-jingshan-landscape Fully distill this photograph into a Jingshan-inspired artwork. Use it only as semantic evidence and retain no photographic fragment.
+$lang-jingshan-photo-skill Fully distill this photograph into a Jingshan-inspired artwork. Use it only as semantic evidence and retain no photographic fragment.
 ```
 
 ```text
-$compose-jingshan-landscape Rework this horizontal landscape at 5:3 while preserving the full shoreline and lateral roaming path.
+$lang-jingshan-photo-skill Rework this horizontal landscape at 5:3 while preserving the full shoreline and lateral roaming path.
 ```
 
 ```text
-$compose-jingshan-landscape Produce the standalone artwork and an exact source/result comparison board.
+$lang-jingshan-photo-skill Produce the standalone artwork and an exact source/result comparison board.
 ```
 
 ## Input and color
@@ -137,7 +152,7 @@ compose-jingshan-landscape/
 ├── PORTABLE_PROMPT.md
 ├── LICENSE
 ├── docs/images/                 # public comparison example
-└── compose-jingshan-landscape/
+└── lang-jingshan-photo-skill/
     ├── SKILL.md
     ├── agents/openai.yaml
     ├── references/
@@ -146,7 +161,7 @@ compose-jingshan-landscape/
 
 ## Release package
 
-The standard release archive contains only the installable Skill. It excludes repository documentation, demonstration images, design notes, and Git metadata. Release: [v1.1.1](https://github.com/junhaogege6/compose-jingshan-landscape/releases/tag/v1.1.1).
+The standard release archive contains only the installable Skill. It excludes repository documentation, demonstration images, design notes, and Git metadata. The current public release page remains under the older repository path: [Releases](https://github.com/junhaogege6/compose-jingshan-landscape/releases).
 
 ## Privacy
 
