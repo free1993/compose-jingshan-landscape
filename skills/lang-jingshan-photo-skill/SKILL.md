@@ -1,6 +1,6 @@
 ---
 name: lang-jingshan-photo-skill
-description: "Transform user-supplied landscapes, figures in landscape, and poetic mobile-photo small scenes into Lang Jingshan-inspired Chinese pictorialist photography. Produce a source-faithful standalone reconstruction, a real-scene layered artwork with a recognizable photographic anchor, a no-photo semantic distillation, or an exact deterministic before/after board. Route portrait subjects to 3:5 and expansive landscapes to 5:3 unless the user specifies another ratio. Use for 郎静山、集锦摄影、画意摄影、中国山水摄影、云山留白、人在景中、日常小景、实景拼贴、叠图、照片核、影像蒸馏、完全重构、原图成图对比, or before/after requests; support one primary photo plus up to three optional supporting photos."
+description: "Transform user-supplied landscapes, figures in landscape, and poetic mobile-photo small scenes into Lang Jingshan-inspired Chinese pictorialist photography. Produce a source-faithful standalone reconstruction, a real-scene layered artwork with a recognizable photographic anchor, a no-photo semantic distillation, or an exact deterministic before/after board, with optional exact vertical Chinese xingkai inscriptions and no seals. Route portrait subjects to 3:5 and expansive landscapes to 5:3 unless the user specifies another ratio. Use for 郎静山、集锦摄影、画意摄影、中国山水摄影、云山留白、人在景中、日常小景、实景拼贴、叠图、照片核、影像蒸馏、完全重构、原图成图对比、中文题字、竖排行楷, or before/after requests; support one primary photo plus up to three optional supporting photos."
 ---
 
 # 静山集锦摄影
@@ -20,7 +20,7 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 
 作者行只属于本 Skill 源文件与仓库说明。不得把 `junhaogege_` 加入生成图片、水印、默认响应或额外推广内容。
 
-## 三条决策轴
+## 四条决策轴
 
 分别决定，不要混为一项：
 
@@ -41,6 +41,14 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 - `artwork-only`：默认，只返回创作成图。
 - `before-after`：额外生成确定性的原图/成图对比板。
 
+### 题字模式
+
+- `inscription-none`：默认，不生成图中文字。
+- `inscription-exact`：逐字使用用户提供的中文，默认竖排小行楷。
+- `inscription-auto`：只在用户明确要求题字但未提供内容时，生成 2 至 6 个汉字。
+
+题字渲染默认使用 `auto`：先尝试独立透明的题跋气质墨迹层，通过文字、笔意、附加内容和画面保护检查后才采用；否则回退到确定性小行楷。用户可明确指定 `ai` 或 `font`。所有模式永久使用 `seal-none`，不得生成印章。
+
 ## 路由
 
 | 用户表达 | 处理 | 呈现 |
@@ -51,6 +59,8 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 | 前后对比、原图成图、before/after | 用户指定；否则 `jingshan-single` | `before-after` |
 | 叠图对比、叠合后再对比 | `jingshan-layered` | `before-after` |
 | 蒸馏对比、重构后再对比 | `jingshan-distilled` | `before-after` |
+
+题字与处理、呈现模式分别路由。“加题字、竖排文字、小行楷”启用题字；“不要文字、无字”强制 `inscription-none`。
 
 仍有歧义时选择破坏最小的 `jingshan-single + artwork-only`。人物本人、精确物件、纪实事件或地点必须保持时，不得自动进入蒸馏。只有交付数量或对比布局无法合理推断时才询问。
 
@@ -89,6 +99,7 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 - 叠图时的照片核、转译场、共享骨架与交接类型
 - 蒸馏时的语义核心、情绪张力、空间手势、来源隐喻、主动省略与解释余地
 - 对比时的布局、顺序和精确标签
+- 题字时的精确文字、渲染方式、竖排位置、字幅与回退条件
 
 默认不展示 Scene Card。
 
@@ -118,7 +129,7 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 3. 让真实照片锚点约占 30% 至 50% 视觉重量，让转译场影响约 45% 至 70%。
 4. 选择山脊、岸线、路径、檐线、树干、主枝、墙影或人物方向作为共享骨架，使其跨过材料边界。
 5. 默认使用 `emulsion-dissolve`；用户明确要求撕纸时使用 `fibrous-tear`；云雾、水光、墙光或雪更自然时使用 `mist-handoff`。
-6. 默认不生成图中文字；用户要求时使用其精确文字，未提供文字时只生成 2 至 6 个汉字。
+6. 题字遵循全局题字模式，不在叠图阶段直接重绘照片核。
 
 详细分配、材料关键词、四段提示词和修正规则见 [layered-composite.md](references/layered-composite.md)。进行任何叠图生成前必须读取该文件。
 
@@ -136,7 +147,7 @@ description: "Transform user-supplied landscapes, figures in landscape, and poet
 
 最终提示词把原图标为“仅作语义与构图参考”，并明确禁止嵌入照片碎片、照片窗口、真实像素区域、原图裁片、描摹、转描、原构图复刻和写实剪贴。重新生成的物象可以保留身份类别、方向、姿态与关系，但不得伪称为原照片像素。
 
-使用与其他模式相同的三远、无画处、颜色和摄影材质规则。默认无图中文字，不采用高饱和色块、自由编辑排版、通用撕纸 zine 或纯插画语言。复杂判断时读取 [visual-grammar.md](references/visual-grammar.md) 的蒸馏章节。
+使用与其他模式相同的三远、无画处、颜色和摄影材质规则。默认无图中文字；用户明确题字时只在完整蒸馏成图通过质量门后添加。不采用高饱和色块、自由编辑排版、通用撕纸 zine 或纯插画语言。复杂判断时读取 [visual-grammar.md](references/visual-grammar.md) 的蒸馏章节。
 
 ## `before-after`
 
@@ -160,6 +171,18 @@ python <skill-root>/scripts/build_comparison.py `
 ```
 
 脚本缺少 Pillow 时，分别返回原图与成图并说明无法组板；不得让生成模型仿制原图。
+
+## 题字
+
+题字是成图后的可选呈现层，不参与主体生成，也不定义郎静山取向。任何模式要求题字时，必须读取 [inscription.md](references/inscription.md)。
+
+- 先完成并锁定无字成图，再添加题字。
+- `auto` 只允许 AI 单独生成透明题字层；不得让 AI 为加字重绘整张成图。
+- AI 层必须逐字正确、竖排有序、接近克制小行书题跋、没有印章署名，并且不能改变底图；任一失败即舍弃。
+- 回退时使用 [add_inscription.py](scripts/add_inscription.py) 确定性叠加系统小行楷。不得因追求笔意接受错字。
+- 把文字放在真实无画处，作为眼动终点；默认单列、2 至 6 字、炭黑或深暖灰，视觉重量约 1.5% 至 3%。
+- “参考郎静山作品题跋气质”指克制的小行书构成，不复制其签名、题款内容或个人笔迹。
+- 永久禁止红印、白文印、朱文印、假署名、作者名、日期、英文和网站水印。
 
 ## 无画处
 
@@ -238,8 +261,9 @@ python <skill-root>/scripts/build_comparison.py `
 8. 用户要求蒸馏时，只把原图作为语义参考生成，并检查最终画面没有照片区域。
 9. 在正常尺寸与小屏预览检查最终创作成图；小屏预览只是 QA 副本，不是输出尺寸。
 10. 仅在存在明确失败时，对用户请求的最终创作阶段进行一次针对性重生成。
-11. 用户要求对比时，在创作成图通过后运行确定性脚本。
-12. 返回请求的交付物与简短中文创作思路。
+11. 用户要求题字时，在无字成图通过后按题字模式生成独立层、检查并回退；不得重绘成图。
+12. 用户要求对比时，在题字版本确定后运行确定性脚本。
+13. 返回请求的交付物与简短中文创作思路。
 
 ## 针对性修正
 
@@ -257,6 +281,8 @@ python <skill-root>/scripts/build_comparison.py `
 - 底色过黄或过褐：中和宣纸黄、棕褐与橙色偏色，只保留轻微暖灰相纸基和象牙高光。
 - 颜色装饰：删除没有来源和结构作用的色相。
 - 对比板裁切或变形：重新用 contain 排版，不调用生成模型。
+- AI 题字错字、加印或改图：舍弃整层，不再生成第二次，改用确定性小行楷。
+- 小行楷过大或像标题：缩小并移入真实无画处，使其成为第二眼信息。
 
 默认最多自动重生成一次；用户明确要求继续迭代时再根据反馈生成。
 
@@ -265,9 +291,9 @@ python <skill-root>/scripts/build_comparison.py `
 - 辅助素材在光线、透视、季节、尺度或意义上冲突时舍弃，不用雾或纸片掩盖。
 - 原图严重过曝、欠曝、滤镜化或压缩时保留现存信息，并说明无法可靠恢复的部分。
 - 不适用近景肖像时不要调用图像生成或对比脚本。
-- 无法生成精确短文字时删除文字，不用错字替代。
+- 无法生成精确 AI 短文字时回退到确定性小行楷；脚本或兼容字体也不可用时返回无字成图和建议题字，不用错字替代。
 
-避免水墨笔触、绘画轮廓、棕褐老照片、宣纸黄、橙色泛旧、仿古污渍、统一宣纸滤镜、通用撕纸模板、干净数字蒙版、贴纸白边、卷角、厚投影、胶带、蕾丝、相框、默认标题、诗句、书法、印章、日期、序列号、英文微文字、图片内署名、网站推广、水印、无来源寺庙、仙鹤、高士、舟船、古装替换、仙侠光效、HDR、青橙调色、霓虹、商业人像光、塑料皮肤、过锐、AI 平滑、虚假景深、均匀大雾和硬接缝。
+避免水墨笔触、绘画轮廓、棕褐老照片、宣纸黄、橙色泛旧、仿古污渍、统一宣纸滤镜、通用撕纸模板、干净数字蒙版、贴纸白边、卷角、厚投影、胶带、蕾丝、相框、默认标题、长诗、未请求的书法题字、任何印章、日期、序列号、英文微文字、图片内署名、网站推广、水印、无来源寺庙、仙鹤、高士、舟船、古装替换、仙侠光效、HDR、青橙调色、霓虹、商业人像光、塑料皮肤、过锐、AI 平滑、虚假景深、均匀大雾和硬接缝。
 
 ## 输出契约
 
@@ -302,6 +328,8 @@ python <skill-root>/scripts/build_comparison.py `
 - 画面是否避免无来源“中国风”符号？
 - 正常尺寸和小屏 QA 是否都有清楚层级；交付是否保持正常尺寸？
 - 对比板是否由脚本生成、保持比例且没有裁切或模型改写？
+- 题字是否按用户要求启用；是否逐字正确、位于无画处、接近小行书题跋且没有印章署名？
+- `auto` 是否只接受通过检查的独立 AI 题字层，并在失败时回退到确定性小行楷？
 - 是否最多进行一次自动针对性修正？
 - 响应是否只包含请求的交付物和简短中文创作思路？
 

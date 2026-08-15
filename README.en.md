@@ -60,10 +60,11 @@ You do already have explicit creative paths; they were simply spread across the 
 | `jingshan-layered` | One artwork combining a truthful photo anchor with an interpreted paper-and-mist field |
 | `jingshan-distilled` | A complete pictorial reconstruction that uses the photo only as semantic evidence and retains no photo fragment |
 | `before-after` | An exact deterministic source/result comparison board |
+| `inscription` | Optional exact vertical Chinese inscription; fall back to deterministic xingkai when the AI layer fails, with seals always disabled |
 | Layered comparison | A layered artwork plus the deterministic comparison board |
 | `poetic-small-scene` | Branches, vessels, window shadows, street corners, and other quiet mobile-photo scenes |
 
-The Skill preserves subject identity, meaningful action, and photographic facts by default. It does not prove a Chinese aesthetic by applying an ink-wash filter; it rebuilds the image through selection, depth, mist, paper white, and Chinese landscape spatial logic. Without an explicit ratio, portrait subjects route to `3:5` and expansive landscapes route to `5:3`.
+The Skill preserves subject identity, meaningful action, and photographic facts by default. It does not prove a Chinese aesthetic by applying an ink-wash filter; it rebuilds the image through selection, depth, mist, paper white, and Chinese landscape spatial logic. Without an explicit ratio, portrait subjects route to `3:5` and expansive landscapes route to `5:3`. Optional inscriptions are added only after the no-text artwork passes review, never as a reason to regenerate the photograph.
 
 ## Installation
 
