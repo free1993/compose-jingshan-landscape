@@ -1,0 +1,88 @@
+Lang Jingshan Photo Skill Personal Non-Commercial License
+Version 1.0 - 2026-08-15
+
+Copyright (c) 2026 junhaogege_. All rights reserved.
+
+This license applies to the skills, prompts, configuration, example files,
+documentation, and other materials distributed in this repository
+(collectively, the "Materials").
+
+1. Personal non-commercial permission
+
+Subject to the terms below, an individual person may download, install, use,
+copy, and modify the Materials only for personal, non-commercial learning,
+research, experimentation, or hobby use.
+
+"Personal, non-commercial" means:
+- no fee is charged for access to the Materials;
+- no payment is required for outputs, support, or delivery;
+- no business benefit, employer benefit, client benefit, or organizational use
+  is involved; and
+- the use is not performed on behalf of another person, company, studio,
+  institution, nonprofit, or government body.
+
+2. Allowed sharing
+
+You may share an original or modified copy of the Materials only when all of
+the following are true:
+- the sharing is free of charge;
+- the sharing is still only for personal, non-commercial use;
+- this license and all copyright, attribution, and source notices stay intact;
+- modified files are clearly marked as modified; and
+- the shared copy is offered under these same terms only.
+
+3. Commercial use is not allowed without written permission
+
+Without prior written permission from junhaogege_, you may not directly or
+indirectly:
+- sell, license, rent, monetize, or charge for the Materials;
+- use the Materials in a paid, sponsored, subscription, advertising-supported,
+  or otherwise monetized product or service;
+- use the Materials for freelance work, agency work, commissioned work,
+  consulting, training, workshops, classes, support, hosting, SaaS, API, or
+  managed service offerings;
+- use the Materials in company, team, client, institutional, or commercial
+  workflows;
+- bundle the Materials into any paid course, app, plugin, membership, toolkit,
+  template pack, or commercial distribution;
+- use outputs produced through the Materials as part of paid delivery,
+  commercial content, or client-facing work; or
+- remove or alter copyright, attribution, source, or license notices, or claim
+  authorship or endorsement that does not exist.
+
+4. Commercial licensing
+
+Any commercial, organizational, client, or revenue-generating use requires
+prior written permission from junhaogege_.
+
+To request commercial licensing, contact the author through the GitHub account
+`junhaogege6` or another contact method explicitly listed in this repository.
+Permission exists only when it is clearly granted in writing.
+
+5. Ownership and reserved rights
+
+The Materials are licensed, not sold. All rights not expressly granted here
+remain reserved by junhaogege_. No trademark, trade name, brand, or patent
+license is granted by default.
+
+6. Termination
+
+If you violate this license, your rights under it end immediately. You must
+stop using and distributing the Materials and delete copies under your control.
+
+7. Warranty disclaimer
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+8. Limitation of liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, JUNHAOGEGE_ SHALL NOT BE LIABLE FOR
+ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM OR RELATED TO THE
+MATERIALS OR THEIR USE.
+
+9. Severability
+
+If any part of this license is held unenforceable, the remaining parts remain
+in effect to the maximum extent permitted by law.

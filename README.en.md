@@ -37,6 +37,21 @@ If search is inconsistent during the transition, try the older repository keywor
 
 A public GitHub repository is searchable by name, but it is not automatically listed in the official Codex, ChatGPT, or third-party Skill/Plugin Directory. Directory publication is a separate process.
 
+## Creative paths
+
+You do already have explicit creative paths; they were simply spread across the mode system rather than presented as one table. For this repository, the most accurate framing is not "two paths" but three creation paths inside one Skill:
+
+| Dimension | Standalone Jingshan edit | Same-canvas layered result | Image distillation |
+| --- | --- | --- | --- |
+| Best for | keeping the original subject, space, and photographic facts | keeping both a truthful photo anchor and a pictorial translated field | extracting the source theme, emotion, and spatial gesture into a fully rebuilt work |
+| Role of the source photo | becomes the photographic skeleton of the final work | remains a real anchor inside the same final canvas | serves only as semantic and emotional evidence, not as visible source material |
+| Transformation method | rebuild through depth logic, blank space, restrained warm silver-gelatin tonality, and spatial editing | make the real photo anchor hand off into paper, mist, and pictorial mountain space | extract tension, visual metaphor, and spatial gesture from the source, then recreate |
+| Result | a standalone pictorial photograph with a clear photographic footing | a layered artwork where the real photo anchor and pictorial field coexist | a complete Lang Jingshan-oriented work with no retained photo fragment |
+| Typical request language | "rework this photo", "Lang Jingshan edit", "preserve the vase and branches" | "layered", "photo anchor", "same-canvas composite" | "distill", "semantic reference only", "retain no photo fragment" |
+| Invocation | `$lang-jingshan-photo-skill` | `$lang-jingshan-photo-skill` | `$lang-jingshan-photo-skill` |
+
+`before-after` is not a separate creation path. It is a delivery mode added after one of the three paths above has produced the artwork.
+
 ## Creative modes
 
 | Mode | Result |
@@ -113,6 +128,48 @@ OpenAI Skills follow the open Agent Skills standard, but image editing, filesyst
 
 References: [OpenAI Skills](https://help.openai.com/en/articles/20001066) · [Volcengine AgentKit Skill package requirements](https://www.volcengine.com/docs/86681/2205064)
 
+## How others can use it
+
+The three most practical usage paths are:
+
+### 1. Install it directly in an Agent Skills host
+
+- open this repository
+- locate `skills/lang-jingshan-photo-skill/`
+- import that folder, or a ZIP containing only that folder
+- after installation, describe the source photo and desired output directly
+
+Best for: Codex, ChatGPT Skills, TRAE, AgentKit, and other hosts that support `SKILL.md`.
+
+### 2. Copy it into a Codex-style local skills directory
+
+- `git clone` this repository
+- copy `skills/lang-jingshan-photo-skill/` into the local skills directory
+- start a new task and either describe the request naturally or call `$lang-jingshan-photo-skill`
+
+Best for: users who want the full rule set and deterministic comparison script.
+
+### 3. Use it as a portable prompt in Doubao, WorkBuddy, or general LLM chat tools
+
+- open [`PORTABLE_PROMPT.md`](PORTABLE_PROMPT.md)
+- copy the portable prompt block
+- paste it into a new chat, system prompt, or custom assistant setup
+- upload the photo and give a direct request
+
+Best for: hosts that cannot install Skills natively but can follow a long prompt or custom-assistant instruction.
+
+## Recommended usage pattern
+
+People get better results when they provide information in this order:
+
+1. upload the primary photo
+2. specify the output type: standalone edit, layered result, distillation, or before/after
+3. list the must-keep elements
+4. list the removable clutter
+5. add ratio or mood, such as `3:5`, `5:3`, quiet, airy, warm silver-gelatin, or larger blank space
+
+When in doubt, write more about what must stay and what should go. That is more useful than saying only "make it Lang Jingshan style."
+
 ## Doubao and general AI tools
 
 Use the project through prompt compatibility when the host cannot install Agent Skills:
@@ -144,6 +201,58 @@ $lang-jingshan-photo-skill Rework this horizontal landscape at 5:3 while preserv
 
 ```text
 $lang-jingshan-photo-skill Produce the standalone artwork and an exact source/result comparison board.
+```
+
+## Prompt templates
+
+These examples are easier for other people to reuse because they are concrete and execution-oriented.
+
+### 1. Small mobile still life
+
+```text
+Rework this mobile photo in a Lang Jingshan-inspired direction. Preserve the vase, branches, and wall shadow. Remove the drink cup and can. Let the empty wall become the main unpainted area, and keep the result photographic before it becomes pictorial. Output 3:5.
+```
+
+### 2. Identity-safe figure in landscape
+
+```text
+Process this travel portrait in landscape. The face, age impression, pose, clothes, and identity must remain accurate. Preserve the true relationship between the person and the hillside, while rebuilding the environment into layered mist, mountain depth, and warm silver-gelatin tonality. Output 3:5.
+```
+
+### 3. Horizontal landscape
+
+```text
+Transform this horizontal landscape photo into a Lang Jingshan-inspired result. Preserve the full shoreline, distant mountains, and lateral roaming path. Compress small foliage detail, strengthen atmospheric depth and blank space, and output 5:3.
+```
+
+### 4. Same-canvas layered result
+
+```text
+Create a same-canvas layered artwork. The real photo anchor must remain clearly recognizable so the original subject and space can still be identified. Let the surrounding field dissolve into paper, mist, and pictorial mountain space. Do not turn it into a generic torn-paper poster or add decorative labels.
+```
+
+### 5. Full distillation
+
+```text
+Use this photo only as semantic evidence and fully distill it into a Lang Jingshan-inspired pictorial photograph. Keep no source photo fragment, no photographic window, and no realistic crop piece. Retain only its spatial gesture, mood, and subject relationships.
+```
+
+### 6. Before/after delivery
+
+```text
+First produce one complete Lang Jingshan-inspired standalone result, then generate a separate source/result comparison board. The source image must remain unchanged and must not be repainted by the model. Keep the final artwork in a restrained warm silver-gelatin direction.
+```
+
+### 7. Multi-image support
+
+```text
+The primary image provides the person and terrain. Supporting images provide distant mountains, cloud layers, and pine forms. Rebuild the scene in a Lang Jingshan-inspired direction while preserving the person's identity and the primary landform. Avoid a heavy scrapbook or obvious collage feel.
+```
+
+### 8. For Doubao or general chat models
+
+```text
+Do not explain theory first. Execute directly: preserve the subject, remove clutter, expand blank space, compress tiny texture, and keep the result photographic before it becomes pictorial. If you do not have real image-editing ability, output a complete executable generation or editing prompt instead.
 ```
 
 ## Input and color

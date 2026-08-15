@@ -18,6 +18,14 @@
 - 单图、叠图、蒸馏三类代表案例
 - 原图保留了什么、删去了什么、无画处承担了什么作用
 
+## 实战提示词入口
+
+如果别人想直接上手，而不是先读完整 Skill 规则，可以先看：
+
+- [README.md](../README.md) 里的“别人如何使用”
+- [README.md](../README.md) 里的“好用提示词”
+- [PORTABLE_PROMPT.md](../PORTABLE_PROMPT.md) 里的可复制提示词
+
 ## 安装入口
 
 真正可安装的 Skill 位于：
